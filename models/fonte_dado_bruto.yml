@@ -1,0 +1,9 @@
+sources:
+  - name: erp
+    description: dados brutos do Raw Adenvure Works
+    schema: raw_adventure_works
+    database: fea24_11
+    tables: 
+      - name: countryregion
+      - name: stateprovince
+      - name: address
