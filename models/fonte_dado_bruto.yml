@@ -7,3 +7,5 @@ sources:
       - name: countryregion
       - name: stateprovince
       - name: address
+      - name: salesreason
+      - name: salesorderheadersalesreason
