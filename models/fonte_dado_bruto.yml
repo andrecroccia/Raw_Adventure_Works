@@ -13,4 +13,7 @@ sources:
       - name: productcategory
       - name: productsubcategory
       - name: creditcard
+      - name: person
+      - name: customer
+      
       
