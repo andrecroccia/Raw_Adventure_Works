@@ -9,3 +9,8 @@ sources:
       - name: address
       - name: salesreason
       - name: salesorderheadersalesreason
+      - name: product
+      - name: productcategory
+      - name: productsubcategory
+      - name: creditcard
+      
