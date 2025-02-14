@@ -15,5 +15,10 @@ sources:
       - name: creditcard
       - name: person
       - name: customer
+      - name: employee
+      - name: salesorderheader
+      - name: salesorderdetail
+
+
       
       
