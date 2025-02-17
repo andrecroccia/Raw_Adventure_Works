@@ -1,0 +1,25 @@
+sources:
+  - name: erp
+    description: dados brutos do Raw Adenvure Works
+    schema: raw_adventure_works
+    database: fea24_11
+    tables: 
+      - name: countryregion
+      - name: stateprovince
+      - name: address
+      - name: salesreason
+      - name: salesorderheadersalesreason
+      - name: product
+      - name: productcategory
+      - name: productsubcategory
+      - name: creditcard
+      - name: person
+      - name: customer
+      - name: employee
+      - name: salesorderheader
+      - name: salesorderdetail
+      - name: salesperson
+
+
+      
+      

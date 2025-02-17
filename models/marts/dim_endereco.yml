@@ -1,0 +1,37 @@
+models:
+  - name: dim_endereco
+    description: dimensão de vendedores do sistema da Raw Adventure Works
+    columns:
+
+      - name: ENDERECO_ID
+        description: CHAVE FK DA TABELA DIMENSAO ENDERECO
+        tests: 
+          - unique
+          - not_null
+                                      
+      - name: ENDERECO
+        description: LOGADOURO DO ENDERECO
+      
+      - name: ENDERECO2
+        description: NOME COMPLETO DO FUNCIONÁRIO
+       
+      - name: CIDADE
+        description: CIDADE DO ENDERECO
+
+      - name: ESTADO
+        description: ESTADO DO ENDERECO
+
+      - name : ESTADO_SIGLA
+        description: SIGLA DO ESTADO
+
+      - name: NOME_DO_ESTADO
+        description: NOME DO ESTADO
+
+      - name : NOME_PAIS
+        description: PAIS DO ENDERECO
+
+      
+
+
+        
+      

@@ -1,0 +1,32 @@
+models:
+  - name: dim_clientes
+    description: dimensão de clientes do sistema da Raw Adventure Works
+    columns:
+
+      - name: ID_CLIENTE
+        description: CHAVE FK DA TABELA DIMENSAO CLIENTES
+        tests: 
+          - unique
+          - not_null
+                                      
+      - name: ID_PERSON
+        description: ID DA PESSOA DA TABELA "PERSON"
+      
+      - name: ID_LOJA
+        description: ID DA LOJA
+       
+      - name: ID_TERRITORIO
+        description: ID DO TERRITORIO
+
+      - name: PESSOA_TIPO
+        description: TIPO DE PESSOA
+
+      - name : NOME_CLIENTE
+        description: NOME COMPLETO DO CLIENTE
+
+
+      
+
+
+        
+      

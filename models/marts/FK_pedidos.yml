@@ -1,0 +1,20 @@
+models:
+  - name: FK_pedidos
+    description: tabela fato de pedidos do sistema da Raw Adventure Works
+    columns:
+
+      - name: ID_PEDIDO
+        description: CHAVE FK DA TABELA DIMENSAO DE PEDIDOS
+        tests: 
+          - unique
+          - not_null
+                                      
+      - name: DATA_DE_VENDA
+        description: DATA DE VENDA DO PEDIDO
+
+
+      
+
+
+        
+      

@@ -1,0 +1,23 @@
+models:
+  - name: dim_vendedor
+    description: dimensão de vendedores do sistema da Raw Adventure Works
+    columns:
+
+      - name: ID_VENDEDOR
+        description: CHAVE FK DO VENDEDOR
+        tests: 
+          - unique
+          - not_null
+                                      
+      - name: ID_TERRITORIO
+        description: CHAVE SK TERRITORIO
+      
+      - name: NOME_FUNCIONARIO
+        description: NOME COMPLETO DO FUNCIONÁRIO
+       
+      - name: DATA_NASCIMENTO
+        description: DATA DE NASCIMENTO DO FUNCIONÁRIO
+
+
+        
+      
