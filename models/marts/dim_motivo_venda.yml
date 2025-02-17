@@ -1,0 +1,20 @@
+models:
+  - name: dim_motivo_venda
+    description: dimensão de motivos de vendas por pedido do sistema da Raw Adventure Works, esta tabela não tem fk chaves pois um pedido pode ter mais que dois motivos de venda
+    columns:
+
+      - name: ID_PEDIDO
+        description: CHAVE FK DE CADA PEDIDO
+                                            
+      - name: ID_MOTIVO
+        description: CHAVE FK do MOTIVO DE VENDA
+      
+      - name: MOTIVO_DE_VENDA
+        description: MOTIVO DE VENDA PRINCIPAL DA VENDA
+       
+      - name: MOTIVO_TIPO
+        description: TIPO DE MOTIVO DE VENDA
+
+
+
+      

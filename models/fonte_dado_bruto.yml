@@ -18,6 +18,7 @@ sources:
       - name: employee
       - name: salesorderheader
       - name: salesorderdetail
+      - name: salesperson
 
 
       

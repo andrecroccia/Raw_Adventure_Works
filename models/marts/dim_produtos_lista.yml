@@ -1,0 +1,24 @@
+models:
+  - name: dim_produtos_lista
+    description: dimensão de produtos do sistema da Raw Adventure Works
+    columns:
+
+      - name: PRODUTO_ID
+        description: CHAVE FK DO PRODUTO
+        tests: 
+          - unique
+          - not_null
+                                      
+      - name: NOME_DO_PRODUTO
+        description: NOME DO PRODUTO COM SUA COR E NUMERO
+      
+      - name: NUMERO_DO_PRODUTO
+        description: NUMERO/CODIGO DO PRODUTO
+       
+      - name: NOME_SUBCATEGORIA
+        description: SUBCATEGORIA DO PRODUTO
+      
+      - name: NOME_CATEGORIA
+        description: CATEGORIA DO PRODUTO
+
+      

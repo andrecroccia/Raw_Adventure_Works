@@ -10,6 +10,7 @@ pedido_detalhe_por_produto AS (
         , pd.ID_PEDIDO_DETALHE
         , pd.QTDE
         , p.nome_do_produto as produto
+        , p.NOME_SUBCATEGORIA
         , pd.PRECO_UNITARIO
         , pd.PRECO_UNITARIO_DESCONTO
         , pd.VALOR_TOTAL

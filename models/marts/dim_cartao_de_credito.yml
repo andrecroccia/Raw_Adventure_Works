@@ -1,0 +1,21 @@
+models:
+  - name: dim_cartao_de_credito
+    description: dimensão de cartao de credito do sistema da Raw Adventure Works
+    columns:
+
+      - name: CARTAO_DE_CREDITO_ID
+        description: CHAVE FK DA TABELA DIMENSAO DE CARTAO DE CREDITO
+        tests: 
+          - unique
+          - not_null
+                                      
+      - name: TIPO_CARTAO_DE_CREDITO
+        description: O TIPO DO CARTAO DE CREDITO QUE FOI PASSADO NA COMPRA
+      
+      - name: NUMERO_DO_CARTAO
+        description: NUMERO DO CARTAO DE CREDITO
+      
+
+
+        
+      
