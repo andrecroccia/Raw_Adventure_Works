@@ -5,7 +5,7 @@ endereco AS ( SELECT * FROM {{ ref('dim_endereco') }} ),
 
 cliente AS ( SELECT * FROM {{ ref('dim_clientes') }} ),
 
-motivo_venda AS ( SELECT * FROM {{ ref('dim_motivo_venda') }} ),
+-- motivo_venda AS ( SELECT * FROM {{ ref('dim_motivo_venda') }} ),
 
 cartao_de_credito AS ( SELECT * FROM {{ ref('dim_cartao_de_credito') }} ),
 
@@ -36,12 +36,12 @@ joined AS (
         , p.TAXAMT
         , p.FRETE
         , p.VALOR_TOTAL
-        , m.MOTIVO_DE_VENDA
+       -- , m.MOTIVO_DE_VENDA
 
     FROM pedidos p
     left JOIN endereco e on p.id_endereco = e.endereco_id 
     left join cliente c on p.id_cliente = c.id_cliente
-    left join motivo_venda m on p.id_pedido = m.id_pedido
+   -- left join motivo_venda m on p.id_pedido = m.id_pedido
     left join cartao_de_credito cc on p.id_cartao_tipo = cc.cartao_de_credito_id
     left join vendedor v on p.id_vendedor = v.id_vendedor
 
