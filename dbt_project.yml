@@ -39,11 +39,14 @@ models:
     # Applies to all files under models/example/
     intermediate:
       +schema: int
+      +on_schema_change: replace
       
     marts:
       +materialized: table
+      +on_schema_change: replace
       +schema: marts
 
     staging:
       +schema: stg
+      +on_schema_change: replace
       erp:

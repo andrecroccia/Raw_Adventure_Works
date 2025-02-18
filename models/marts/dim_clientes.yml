@@ -11,6 +11,9 @@ models:
                                       
       - name: ID_PERSON
         description: ID DA PESSOA DA TABELA "PERSON"
+        tests: 
+          - unique
+          - not_null
       
       - name: ID_LOJA
         description: ID DA LOJA
@@ -22,8 +25,11 @@ models:
         description: TIPO DE PESSOA
 
       - name : NOME_CLIENTE
-        description: NOME COMPLETO DO CLIENTE
-
+        description: NOME COMPLETO DO CLIENTE (PELO TESTE UNIQUE, EXISTEM NOMES COMPLETOS IGUAIS)
+        tests: 
+          - unique
+          - not_null
+              
 
       
 
