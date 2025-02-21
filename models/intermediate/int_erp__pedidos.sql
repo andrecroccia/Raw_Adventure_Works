@@ -21,16 +21,18 @@ joined AS (
        -- , p.DATA_DE_ENVIO
         , p.STATUS
        -- , p.NUMERO_DA_CONTA
-       -- , p.ID_CLIENTE
+        , p.ID_CLIENTE
         , c.NOME_CLIENTE
-       -- , p.ID_VENDEDOR
-        , v.id_vendedor as VENDEDOR
+        , p.ID_VENDEDOR
+        , v.NOME_FUNCIONARIO as VENDEDOR
        -- , p.ID_TERRITORIO
+        , e.ENDERECO_ID
         , e.CIDADE
         , e.NOME_DO_ESTADO AS ESTADO
         , e.NOME_PAIS AS PAIS
        -- , p.ID_METODO_ENVIO
        -- , p.ID_CARTAO_TIPO
+        , p.id_cartao_tipo
         , cc.tipo_cartao_de_credito as cartao_de_credito
         , p.SUBTOTAL
         , p.TAXAMT

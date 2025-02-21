@@ -14,8 +14,11 @@ clientes AS (
         , P.nome_cliente
 
     FROM pessoa_cliente pc
-    left JOIN pessoa p ON pc.id_person = p.id_pessoa )
+    inner JOIN pessoa p ON pc.id_person = p.id_pessoa )
     
 
-select *
+select * 
 from clientes
+
+-- select count(*) as total
+-- from clientes
