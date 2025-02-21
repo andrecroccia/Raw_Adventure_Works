@@ -23,8 +23,8 @@ joined AS (
        -- , p.NUMERO_DA_CONTA
         , p.ID_CLIENTE
         , c.NOME_CLIENTE
-       -- , p.ID_VENDEDOR
-        , v.id_vendedor as VENDEDOR
+        , p.ID_VENDEDOR
+        , v.NOME_FUNCIONARIO as VENDEDOR
        -- , p.ID_TERRITORIO
         , e.ENDERECO_ID
         , e.CIDADE
