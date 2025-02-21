@@ -12,8 +12,48 @@ models:
       - name: DATA_DE_VENDA
         description: DATA DE VENDA DO PEDIDO
 
+      - name: ID_CLIENTE
+        description: ID DO CLIENTE RELACIONADO AO PEDIDO
 
-      
+      - name: DATA_DE_VENDA
+        description: NOME DO CLIENTE RELACIONADO AO PEDIDO
+
+      - name: ID_VENDEDOR
+        description: ID DO VENDEDOR RELACIONADO AO PEDIDO
+
+      - name: VENDEDOR
+        description: NOME DO VENDEDOR (FUNCIONÁRIO) RELACIONADO AO PEDIDO
+
+      - name: ENDERECO_ID
+        description: ID DO ENDERECO RELACIONADO AO LOCAL DE VENDA/ENTREGA
+
+      - name: CIDADE
+        description: CIDADE DO ENDERECO RELACIONADO AO LOCAL DE VENDA/ENTREGA
+
+      - name: ESTADO
+        description: ESTADO DO ENDERECO RELACIONADO AO LOCAL DE VENDA/ENTREGA
+
+      - name: PAIS
+        description: PAÍS DO ENDERECO RELACIONADO AO LOCAL DE VENDA/ENTREGA
+
+      - name: ID_CARTAO_TIPO
+        description: ID DO CARTÃO DO CLIENTE RELACIONADO À VENDA
+
+      - name: CARTAO_DE_CREDITO
+        description: NOME DO CARTÃO DO CLIENTE RELACIONADO À VENDA
+        
+      - name: SUBTOTAL
+        description: VALOR DO PEDIDO SEM TAXAS
+
+      - name: TAXAMT
+        description: VALOR DA TAXAMT
+
+      - name: FRETE
+        description: VALOR DO FRETE DO PEDIDO
+
+      - name: VALOR_TOTAL
+        description: VALOR TOTAL DO PEDIDO
+
 
 
         

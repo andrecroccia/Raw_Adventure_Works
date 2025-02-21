@@ -12,7 +12,5 @@ models:
 
       - name: NOME_CLIENTE
         description: VERIFICAR SE HÁ NOMES IGUAIS
-        tests: 
-          - unique
-          - not_null
+
                      

@@ -8,10 +8,31 @@ models:
         tests: 
           - unique
           - not_null
-                                      
 
+      - name: ID_PEDIDO
+        description: ID DO PEDIDO QUE O MATERIAL ESTÁ VINCULADO                         
 
-      
+      - name: QTDE
+        description: QUANTIDADE DO PRODUTO SOLICITADO
+
+      - name: PRODUTO_ID
+        description: ID DO PRODUTO COMPRADO
+
+      - name: PRODUTO
+        description: NOME DO PRODUTO VINCULADO AO ID_PRODUTO
+
+      - name: NOME_SUBCATEGORIA
+        description: SUBCATEGORIA DO PRODUTO
+
+      - name: PRECO_UNITARIO
+        description: PRECO UNITÁRIO DO PRODUTO
+
+      - name: PRECO_UNITARIO_DESCONTO
+        description: DESCONTO EM PORCENTAGEM DO PREÇO
+
+      - name: VALOR_TOTAL
+        description: VALOR TOTAL DE VENDA DO PRODUTO
+
 
 
         
