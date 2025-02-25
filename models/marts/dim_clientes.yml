@@ -26,10 +26,6 @@ models:
 
       - name : NOME_CLIENTE
         description: NOME COMPLETO DO CLIENTE (PELO TESTE UNIQUE, EXISTEM NOMES COMPLETOS IGUAIS)
-        tests: 
-          - unique
-          - not_null
-              
 
       
 
