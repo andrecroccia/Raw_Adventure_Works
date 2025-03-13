@@ -10,16 +10,16 @@ models:
           - not_null
                                       
       - name: ID_PERSON
-        description: ID DA PESSOA DA TABELA "PERSON"
+        description: CHAVE SK DA PESSOA DA TABELA "PERSON"
         tests: 
           - unique
           - not_null
       
       - name: ID_LOJA
-        description: ID DA LOJA
+        description: CHAVE SK DO ID DA LOJA
        
       - name: ID_TERRITORIO
-        description: ID DO TERRITORIO
+        description: CHAVE SK DO ID DO TERRITORIO
 
       - name: PESSOA_TIPO
         description: TIPO DE PESSOA

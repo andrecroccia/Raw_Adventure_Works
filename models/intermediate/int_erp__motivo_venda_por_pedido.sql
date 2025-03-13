@@ -1,22 +1,22 @@
-WITH 
-mp AS (
-    SELECT * FROM {{ ref('stg_erp__motivo_venda_pedido') }}
+with 
+mp as (
+    select * from {{ ref('stg_erp__motivo_venda_pedido') }}
 ),
-mt AS (
-    SELECT * FROM {{ ref('stg_erp__motivo_venda_tipo') }}
+mt as (
+    select * from {{ ref('stg_erp__motivo_venda_tipo') }}
 ),
-mp_mt AS (
-    SELECT 
-        mp.ID_PEDIDO,
-        mp.ID_MOTIVO,
+mp_mt as (
+    select 
+        mp.id_pedido
+        , mp.id_motivo
+        , mt.motivo_de_venda
+        , mt.motivo_tipo
         
-        mt.MOTIVO_DE_VENDA,
-        mt.MOTIVO_TIPO
-        
-    FROM mp
-    INNER JOIN mt ON mp.ID_MOTIVO = mt.ID_MOTIVO
+    from mp
+    inner join mt on mp.id_motivo = mt.id_motivo
 )
 
-SELECT * FROM mp_mt
+select * from mp_mt
+
 
 

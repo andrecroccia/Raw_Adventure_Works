@@ -1,20 +1,24 @@
-WITH
-pessoa AS ( SELECT * FROM {{ ref('stg_erp__pessoa') }} ),
+with pessoa as ( 
+    select * from {{ ref('stg_erp__pessoa') }}
+),
 
-pessoa_cliente AS ( SELECT * FROM {{ ref('stg_erp__pessoa_cliente') }} ),
+pessoa_cliente as (
+     select * from {{ ref('stg_erp__pessoa_cliente') }} 
+), 
 
-clientes AS (
-    SELECT
+clientes as (
+    select
    
-         pc.ID_CLIENTE
-        , pc.ID_PERSON
-        , pc.ID_LOJA
-        , pc.ID_TERRITORIO
+         pc.id_cliente
+        , pc.id_person
+        , pc.id_loja
+        , pc.id_territorio
         , p.pessoa_tipo
-        , P.nome_cliente
+        , p.nome_cliente
 
-    FROM pessoa_cliente pc
-    inner JOIN pessoa p ON pc.id_person = p.id_pessoa )
+    from pessoa_cliente pc
+    inner join pessoa p on pc.id_person = p.id_pessoa 
+    )
     
 
 select * 

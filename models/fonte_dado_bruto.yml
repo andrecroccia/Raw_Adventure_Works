@@ -1,24 +1,103 @@
 sources:
   - name: erp
-    description: dados brutos do Raw Adenvure Works
+    description: "Dados brutos do Raw Adventure Works"
     schema: raw_adventure_works
     database: fea24_11
     tables: 
       - name: countryregion
+        columns:
+          - name: COUNTRYREGIONCODE
+            tests: 
+              - unique
+              - not_null              
       - name: stateprovince
+        columns:
+          - name: STATEPROVINCEID
+            tests: 
+              - unique
+              - not_null   
       - name: address
+        columns:
+          - name: ADDRESSID
+            tests: 
+              - unique
+              - not_null  
       - name: salesreason
+        columns:
+          - name: SALESREASONID
+            tests: 
+              - unique
+              - not_null   
       - name: salesorderheadersalesreason
+        columns:
+          - name: SALESORDERID
+            tests: 
+              - not_null  
+          - name: SALESREASONID
+            tests: 
+              - not_null  
       - name: product
+        columns:
+          - name: PRODUCTID
+            tests: 
+              - unique
+              - not_null  
       - name: productcategory
+        columns:
+          - name: PRODUCTCATEGORYID
+            tests: 
+              - unique
+              - not_null  
       - name: productsubcategory
+        columns:
+          - name: PRODUCTSUBCATEGORYID
+            tests: 
+              - unique
+              - not_null  
       - name: creditcard
+        columns:
+          - name: CREDITCARDID
+            tests: 
+              - unique
+              - not_null
       - name: person
+        columns:
+          - name: BUSINESSENTITYID
+            tests: 
+              - unique
+              - not_null
       - name: customer
+        columns:
+          - name: CUSTOMERID
+            tests: 
+              - unique
+              - not_null
       - name: employee
+        columns:
+          - name: BUSINESSENTITYID
+            tests: 
+              - unique
+              - not_null
       - name: salesorderheader
+        columns:
+          - name: SALESORDERID
+            tests: 
+              - unique
+              - not_null
       - name: salesorderdetail
+        columns:
+          - name: SALESORDERDETAILID
+            tests: 
+              - unique
+              - not_null
       - name: salesperson
+        columns:
+          - name: BUSINESSENTITYID
+            tests: 
+              - unique
+              - not_null
+
+
 
 
       

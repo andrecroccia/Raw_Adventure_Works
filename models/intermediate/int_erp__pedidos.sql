@@ -1,47 +1,56 @@
-WITH
-pedidos AS ( SELECT * FROM {{ ref('stg_erp__vendas_por_pedido') }} ),
+with
+pedidos as ( 
+    select * from {{ ref('stg_erp__vendas_por_pedido') }} 
+),
 
-endereco AS ( SELECT * FROM {{ ref('dim_endereco') }} ),   
+endereco as (
+    select * from {{ ref('dim_endereco') }} 
+),   
 
-cliente AS ( SELECT * FROM {{ ref('dim_clientes') }} ),
+cliente as ( 
+    select * from {{ ref('dim_clientes') }} 
+),
 
--- motivo_venda AS ( SELECT * FROM {{ ref('dim_motivo_venda') }} ),
+-- motivo_venda as ( select * from {{ ref('dim_motivo_venda') }} ),
 
-cartao_de_credito AS ( SELECT * FROM {{ ref('dim_cartao_de_credito') }} ),
+cartao_de_credito as ( 
+    select * from {{ ref('dim_cartao_de_credito') }} 
+),
 
-vendedor AS ( SELECT * FROM {{ ref('dim_vendedor') }} ),
+vendedor as ( 
+    select * from {{ ref('dim_vendedor') }} 
+),
 
+joined as (
+    select
 
-joined AS (
-    SELECT
-
-         p.ID_PEDIDO
-        , p.DATA_DE_VENDA
-       -- , p.DATA_DE_VENCIMENTO
-       -- , p.DATA_DE_ENVIO
-        , p.STATUS
-       -- , p.NUMERO_DA_CONTA
-        , p.ID_CLIENTE
-        , c.NOME_CLIENTE
-        , p.ID_VENDEDOR
-        , v.NOME_FUNCIONARIO as VENDEDOR
-       -- , p.ID_TERRITORIO
-        , e.ENDERECO_ID
-        , e.CIDADE
-        , e.NOME_DO_ESTADO AS ESTADO
-        , e.NOME_PAIS AS PAIS
-       -- , p.ID_METODO_ENVIO
-       -- , p.ID_CARTAO_TIPO
+         p.id_pedido
+        , p.data_de_venda
+       -- , p.data_de_vencimento
+       -- , p.data_de_envio
+        , p.status
+       -- , p.numero_da_conta
+        , p.id_cliente
+        , c.nome_cliente
+        , p.id_vendedor
+        , v.nome_funcionario as vendedor
+       -- , p.id_territorio
+        , e.endereco_id
+        , e.cidade
+        , e.nome_do_estado as estado
+        , e.nome_pais as pais
+       -- , p.id_metodo_envio
+       -- , p.id_cartao_tipo
         , p.id_cartao_tipo
         , cc.tipo_cartao_de_credito as cartao_de_credito
-        , p.SUBTOTAL
-        , p.TAXAMT
-        , p.FRETE
-        , p.VALOR_TOTAL
-       -- , m.MOTIVO_DE_VENDA
+        , p.subtotal
+        , p.taxamt
+        , p.frete
+        , p.valor_total
+       -- , m.motivo_de_venda
 
-    FROM pedidos p
-    left JOIN endereco e on p.id_endereco = e.endereco_id 
+    from pedidos p
+    left join endereco e on p.id_endereco = e.endereco_id 
     left join cliente c on p.id_cliente = c.id_cliente
    -- left join motivo_venda m on p.id_pedido = m.id_pedido
     left join cartao_de_credito cc on p.id_cartao_tipo = cc.cartao_de_credito_id

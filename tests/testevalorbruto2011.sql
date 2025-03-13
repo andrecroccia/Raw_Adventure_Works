@@ -1,51 +1,23 @@
--- WITH pd AS ( 
---     SELECT * 
---     FROM {{ ref('int_erp__pedido_detalhe_por_produto') }}
--- ),
--- p AS (
---     SELECT * 
---     FROM {{ ref('int_erp__pedidos') }}
--- ),
--- pdt AS (
---     SELECT
---         pd.ID_PEDIDO_DETALHE,
---         p.ID_PEDIDO,
---         p.DATA_DE_VENDA,  -- Conversão aqui
---         pd.QTDE,
---         pd.PRECO_UNITARIO
---     FROM pd
---     LEFT JOIN p 
---         ON pd.ID_PEDIDO = p.ID_PEDIDO
--- )
--- 
--- SELECT SUM(QTDE * PRECO_UNITARIO) AS valor2011
--- FROM pdt
--- WHERE EXTRACT(YEAR FROM DATA_DE_VENDA) = 2011
-
-
--- TESTE SEM INT
-
-
- WITH pd AS ( 
-     SELECT * 
-     FROM {{ ref('stg_erp__vendas_por_pedido_detalhe') }}
+ with pd as ( 
+     select * 
+     from {{ ref('stg_erp__vendas_por_pedido_detalhe') }}
  ),
- p AS (
-     SELECT * 
-     FROM {{ ref('stg_erp__vendas_por_pedido') }}
+ p as (
+     select * 
+     from {{ ref('stg_erp__vendas_por_pedido') }}
  ),
- pdt AS (
-     SELECT
-         pd.ID_PEDIDO_DETALHE,
-         p.ID_PEDIDO,
-         p.DATA_DE_VENDA,  -- Conversão aqui
-         pd.QTDE,
-         pd.PRECO_UNITARIO
-     FROM pd
-     LEFT JOIN p 
-         ON pd.ID_PEDIDO = p.ID_PEDIDO
+ pdt as (
+     select
+         pd.id_pedido_detalhe
+         , p.id_pedido
+         , p.data_de_venda 
+         , pd.qtde
+         , pd.preco_unitario
+     from pd
+     left join p 
+         on pd.id_pedido = p.id_pedido
  )
  
- SELECT SUM(QTDE * PRECO_UNITARIO) AS valor2011
- FROM pdt
- WHERE EXTRACT(YEAR FROM DATA_DE_VENDA) = 2011
+ select sum(qtde * preco_unitario) as valor2011
+ from pdt
+ where extract(year from data_de_venda) = 2011
