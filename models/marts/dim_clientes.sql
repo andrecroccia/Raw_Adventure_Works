@@ -1,5 +1,4 @@
-with 
-dim_clientes as (
+with dim_clientes as (
     select *
     from {{ ref('int_erp__clientes') }}
 )

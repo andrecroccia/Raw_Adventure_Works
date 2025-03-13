@@ -1,5 +1,4 @@
-with 
-dim_produtos_lista as (
+with dim_produtos_lista as (
     select *
     from {{ ref('int_erp__produtos') }}
 )

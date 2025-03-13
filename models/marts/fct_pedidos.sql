@@ -1,5 +1,4 @@
-with 
-fk_pedidos as (
+with fk_pedidos as (
     select *
     from {{ ref('int_erp__pedidos') }}
 )

@@ -10,13 +10,13 @@ models:
           - not_null
 
       - name: ID_PEDIDO
-        description: ID DO PEDIDO QUE O MATERIAL ESTÁ VINCULADO                         
+        description: CHAVE SK DE PEDIDO QUE O MATERIAL ESTÁ VINCULADO                         
 
       - name: QTDE
         description: QUANTIDADE DO PRODUTO SOLICITADO
 
       - name: PRODUTO_ID
-        description: ID DO PRODUTO COMPRADO
+        description: CHAVE SK DO PRODUTO COMPRADO
 
       - name: PRODUTO
         description: NOME DO PRODUTO VINCULADO AO ID_PRODUTO

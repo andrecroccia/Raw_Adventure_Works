@@ -1,44 +1,45 @@
- WITH fonte_pessoa AS (
-     SELECT *   
-     FROM {{ source('erp', 'person') }}
+ with fonte_pessoa as (
+     select *   
+     from {{ source('erp', 'person') }}
  ),
- renomeado AS (
-     SELECT
-         CAST(BUSINESSENTITYID AS INT) AS id_pessoa
-         , CAST(PERSONTYPE AS STRING) AS pessoa_tipo
-         , COALESCE(FIRSTNAME, '') || ' ' || 
-          COALESCE(MIDDLENAME, '') || ' ' || 
-          COALESCE(LASTNAME, '') AS nome_cliente
-     FROM fonte_pessoa
+ renomeado as (
+     select
+         cast(businessentityid as int) as id_pessoa
+         , cast(persontype as string) as pessoa_tipo
+         , coalesce(firstname, '') || ' ' || 
+          coalesce(middlename, '') || ' ' || 
+          coalesce(lastname, '') as nome_cliente
+     from fonte_pessoa
  )
  
- SELECT *
- FROM renomeado
+ select *
+ from renomeado
 
--- WITH fonte_pessoa AS ( -- VERIFICAR QUAIS NOMES ESTÃO DUPLICADOS
---     SELECT *   
---     FROM {{ source('erp', 'person') }}
+-- with fonte_pessoa as ( -- verificar quais nomes estão duplicados
+--     select *   
+--     from {{ source('erp', 'person') }}
 -- ),
--- renomeado AS (
---     SELECT
---         CAST(BUSINESSENTITYID AS INT) AS id_pessoa,
---         CAST(PERSONTYPE AS STRING) AS pessoa_tipo,
---         COALESCE(FIRSTNAME, '') || ' ' || 
---         COALESCE(MIDDLENAME, '') || ' ' || 
---         COALESCE(LASTNAME, '') AS nome_cliente
---     FROM fonte_pessoa
+-- renomeado as (
+--     select
+--         cast(businessentityid as int) as id_pessoa
+--         , cast(persontype as string) as pessoa_tipo
+--         , coalesce(firstname, '') || ' ' || 
+--         coalesce(middlename, '') || ' ' || 
+--         coalesce(lastname, '') as nome_cliente
+--     from fonte_pessoa
 -- )
--- , duplicados AS (
---     SELECT 
+-- , duplicados as (
+--     select 
 --         nome_cliente, 
---         COUNT(*) AS qtd_ocorrencias
---     FROM renomeado
---     GROUP BY nome_cliente
---     HAVING COUNT(*) > 1
+--         count(*) as qtd_ocorrencias
+--     from renomeado
+--     group by nome_cliente
+--     having count(*) > 1
 -- )
 -- 
--- SELECT * 
--- FROM duplicados
--- ORDER BY qtd_ocorrencias DESC
+-- select * 
+-- from duplicados
+-- order by qtd_ocorrencias desc
+
 
 

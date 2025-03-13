@@ -1,5 +1,4 @@
-with 
-dim_endereco as (
+with dim_endereco as (
     select *
     from {{ ref('int_erp__endereco_completo') }}
 )

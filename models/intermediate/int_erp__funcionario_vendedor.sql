@@ -1,39 +1,39 @@
-WITH
-pessoa AS (
-    SELECT * FROM {{ ref('stg_erp__pessoa') }}
+with
+pessoa as (
+    select * from {{ ref('stg_erp__pessoa') }}
 ),
 
-funcionarios AS (
-    SELECT * FROM {{ ref('stg_erp__pessoa_funcionario') }}
+funcionarios as (
+    select * from {{ ref('stg_erp__pessoa_funcionario') }}
 ),
 
-vendedores AS (
-    SELECT * FROM {{ ref('stg_erp__pessoa_funcionario_vendas') }} )
-,
+vendedores as (
+    select * from {{ ref('stg_erp__pessoa_funcionario_vendas') }} 
+),
 
-joined AS (
-    SELECT
+joined as (
+    select
 
-         f.ID_FUNCIONARIO
-        , p.NOME_CLIENTE as nome_funcionario
-        , f.ID_NUMERO_NACIONAL
-        , f.CARGO
-        , f.DATA_NASCIMENTO
+         f.id_funcionario
+        , p.nome_cliente as nome_funcionario
+        , f.id_numero_nacional
+        , f.cargo
+        , f.data_nascimento
 
-    FROM funcionarios f
-    INNER JOIN pessoa p ON f.id_funcionario = p.id_pessoa ) ,
+    from funcionarios f
+    inner join pessoa p on f.id_funcionario = p.id_pessoa ) ,
     
     joined_2 as (
-    SELECT 
+    select 
 
-         v.ID_VENDEDOR
-        , v.ID_TERRITORIO
+         v.id_vendedor
+        , v.id_territorio
         , j.nome_funcionario
         , j.cargo
         , j.data_nascimento
 
-FROM vendedores v
-INNER JOIN joined j ON v.id_vendedor = j.id_funcionario )
+from vendedores v
+inner join joined j on v.id_vendedor = j.id_funcionario )
 
 select *
 from joined_2

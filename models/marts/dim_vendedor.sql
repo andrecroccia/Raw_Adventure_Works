@@ -1,5 +1,4 @@
-with 
-dim_vendedor as (
+with dim_vendedor as (
     select *
     from {{ ref('int_erp__funcionario_vendedor') }}
 )
